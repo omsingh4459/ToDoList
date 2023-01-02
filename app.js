@@ -10,7 +10,9 @@ const _ = require("lodash");
 app.set('view engine', 'ejs');
 mongoose.set('strictQuery', true);
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(__dirname + '/public'));
 mongoose.connect("mongodb+srv://admin2-om:test1234@cluster0.pgoezg0.mongodb.net/todoListDB");
 // const items = ["Buy Food", "Cook Food", "Eat Food"];
 // const workItems = [];
